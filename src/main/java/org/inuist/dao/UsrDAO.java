@@ -9,11 +9,13 @@ import java.util.List;
  * @date 2024/7/23 下午7:35
  */
 public interface UsrDAO {
-    boolean insert(String uname, String upwd);
-    boolean delete(Long id);
+    boolean insert(Usr usr);
+    boolean delete(Integer id);
     boolean update(Usr usr);
+    boolean login(String uname, String upwd);
+    boolean register(Usr usr);
     Integer count();
-    Usr findById(Long id);
+    Usr findById(Integer id);
     List<Usr> findAll();
     List<Usr> findByNameLike(String name);
     List<Usr> findByNameLikeWithLimit(String name, int start, int limit);

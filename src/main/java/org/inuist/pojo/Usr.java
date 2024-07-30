@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Usr {
-    private Long uid;
+    private Integer uid;
     private String uname;
     private String upassword;
     private Boolean ustatus;
