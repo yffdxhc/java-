@@ -24,11 +24,11 @@ public class MainView {
     }
     public static void mainView(){
         print("=========欢迎来到博客系统=========");
-        print("=========当前用户=========");
         print("1.登录请输入‘1’");
         print("2.注册请输入‘2’");
         print("3.游客请输入‘3’");
         print("4.退出请输入‘4’");
+        print("-------------------");
         String scan = scanner.nextLine();
         MainController.mainController(scan);
     }

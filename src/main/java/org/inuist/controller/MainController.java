@@ -5,6 +5,7 @@ import org.inuist.dao.UsrDAO;
 import org.inuist.dao.impl.UsrDAOImpl;
 import org.inuist.pojo.Usr;
 import org.inuist.view.MainView;
+import org.inuist.view.SecondaryView;
 
 import java.util.Scanner;
 
@@ -23,12 +24,13 @@ public class MainController {
                     MainView.registerView();
                     break;
                     case "3":
-                        //TODO
-                        MainView.print("功能尚在建设...........");
+                        MainView.print("正在以游客身份进入博客系统............");
+                        SecondaryController.usr=new Usr();
+                        SecondaryView.secondaryView();
                         break;
                         case "4":
                             MainView.print("正在退出，请稍后.........");
-                            return;
+                            break;
             default:
                 MainView.print("输入异常，请重新输入");
         }
@@ -36,8 +38,9 @@ public class MainController {
     public static void loginController(Usr inputUsr) {
         boolean isLogin = usrDAO.login(inputUsr.getUname(),inputUsr.getUpassword());
         if (isLogin) {
-            //TODO
-            MainView.print("功能尚在建设..........");
+            MainView.print("登录成功，正在进入系统............");
+            SecondaryController.usr=inputUsr;
+            SecondaryView.secondaryView();
         }else {
             MainView.print("登录信息有误，请重新登录.......");
             MainView.loginView();

@@ -46,4 +46,36 @@ public class TestPostDAO {
     public void testGetPostById(){
         System.out.println(postDAO.getPostById(2L));
     }
+    @Test
+    public void testGetAllPosts(){
+        System.out.println(postDAO.getAllPosts());
+    }
+    @Test
+    public void testgetPostsWithLimit(){
+        System.out.println(postDAO.getPostsWithLimit(0,5));
+    }
+    @Test
+    public void testGetPostsByTitleLikeWithLimit(){
+        System.out.println(postDAO.getPostsByTitleLikeWithLimit("测",0,10));
+    }
+    @Test
+    public void testGetPostsByTitleLike(){
+        System.out.println(postDAO.getPostsByTitleLike("测"));
+    }
+    @Test
+    public void getPostsBySummaryLikeWithLimit(){
+        System.out.println(postDAO.getPostsBySummaryLikeWithLimit("数据",0,10));
+    }
+    @Test
+    public void testGetPostsBySummaryLike(){
+        System.out.println(postDAO.getPostsBySummaryLike("数"));
+    }
+    @Test
+    public void testGetPostsByAuthorLikeWithLimit(){
+        System.out.println(postDAO.getPostsByAuthorLikeWithLimit("a",0,5));
+    }
+    @Test
+    public void testGetPostsByAuthorLike(){
+        System.out.println(postDAO.getPostsByAuthorLike("a"));
+    }
 }

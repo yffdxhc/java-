@@ -18,7 +18,7 @@ public class Post {
     private String ptitle;
     private String psummary;
     private String pcontent;
-    private Integer pauthor;
+    private Integer uid;
     private Date pdate;
     private boolean pstatus;
 }
