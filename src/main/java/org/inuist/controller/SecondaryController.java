@@ -33,7 +33,7 @@ public class SecondaryController {
                     break;
                     case "3":
                         MainView.print("正在退出系统............");
-                        break;
+                        return;
             default:
                 MainView.print("输入异常，请重新输入");
                 SecondaryView.secondaryView();
@@ -56,7 +56,7 @@ public class SecondaryController {
                             break;
                             case "5":
                                 MainView.print("正在退出博客系统，请稍后............");
-                                break;
+                                return;
             default:
                 MainView.print("输入异常，请重新输入");
                 SecondaryView.secondaryView();
@@ -70,13 +70,14 @@ public class SecondaryController {
                 break;
                 case "2":
                     SecondaryManagingView.managePostView();
+                    break;
                             case "3":
                                 MainView.print("正在返回上一级，请稍后............");
                                 SecondaryView.secondaryView();
                                 break;
                                 case "4":
                                     MainView.print("正在退出系统，请稍后............");
-                                    break;
+                                    return;
             default:
                 MainView.print("输入异常，请重新输入");
                 SecondaryView.manageView();

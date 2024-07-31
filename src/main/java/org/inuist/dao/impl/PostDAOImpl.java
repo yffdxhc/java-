@@ -42,13 +42,13 @@ public class PostDAOImpl implements PostDAO {
     }
 
     @Override
-    public boolean deletePost(Post post) {
+    public boolean deletePost(Integer id) {
         String sql="update post set pstatus=false where pid=?";
         try(
                 Connection conn = cp.getConnection();
                 PreparedStatement ps = conn.prepareStatement(sql)
                 ){
-            ps.setInt(1,post.getPid());
+            ps.setInt(1,id);
             boolean result = ps.executeUpdate()>0;
             cp.returnConnection(conn);
             return result;

@@ -29,8 +29,7 @@ public class TestPostDAO {
     }
     @Test
     public void testdeletePost(){
-        System.out.println(postDAO.deletePost(new Post
-                (1,"测试","增数据","表数据增加",1,new Date(),true)));
+        System.out.println(postDAO.deletePost(1));
     }
     @Test
     public void testupdatePost(){

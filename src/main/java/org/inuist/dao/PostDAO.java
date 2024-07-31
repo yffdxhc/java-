@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface PostDAO {
     boolean addPost(Post post);
-    boolean deletePost(Post post);
+    boolean deletePost(Integer id);
     boolean updatePost(Post post);
     Long count();
     Post getPostById(Long id);

@@ -52,4 +52,36 @@ public class SecondaryManagingView {
         String usrInput = scanner.nextLine();
         SecondaryManagingController.managePostController(usrInput);
     }
+
+    public static void deletePostView(){
+        MainView.print("=========现在处于删除博客阶段=========");
+        System.out.printf("=========当前用户id：%d=========", SecondaryController.usr.getUid());
+        System.out.println();
+        System.out.printf("=========当前用户名：%s=========",SecondaryController.usr.getUname());
+        System.out.println();
+        MainView.print("请输入要删除的博客的id:");
+        int id = scanner.nextInt();
+        SecondaryManagingController.deletePostController(id);
+    }
+
+    public static void updatePostView(){
+        MainView.print("=========现在处于修改博客阶段=========");
+        System.out.printf("=========当前用户id：%d=========", SecondaryController.usr.getUid());
+        System.out.println();
+        System.out.printf("=========当前用户名：%s=========",SecondaryController.usr.getUname());
+        System.out.println();
+        MainView.print("请输入要修改的博客的id：");
+        String i = scanner.nextLine();
+        int id = Integer.parseInt(i);
+        MainView.print("请输入修改后的题目：");
+        String title = scanner.nextLine();
+        MainView.print("请输入修改后的摘要：");
+        String summary = scanner.nextLine();
+        MainView.print("请输入修改后的内容：");
+        String content = scanner.nextLine();
+        Post post=new Post(id,title,summary,content,
+                SecondaryController.usr.getUid(),
+                new Date(Calendar.getInstance().getTime().getTime()),true);
+        SecondaryManagingController.updatePostController(post);
+    }
 }

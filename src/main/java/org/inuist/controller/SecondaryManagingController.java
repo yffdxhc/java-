@@ -38,22 +38,30 @@ public class SecondaryManagingController {
                     SecondaryManagingView.managePostView();
                     break;
                     case "3":
-                        //TODO
-                        System.out.println("删除博客功能尚在建设............");
+                        SecondaryManagingView.deletePostView();
                         break;
                         case "4":
-                            //TODO
-                            System.out.println("修改博客功能尚在建设............");
+                            SecondaryManagingView.updatePostView();
                             break;
                             case "5":
                                 SecondaryView.manageView();
                                 break;
                                 case "6":
                                     MainView.print("正在退出系统，请稍后............");
-                                    break;
+                                    return;
             default:
                 MainView.print("输入异常，请重新输入..........");
                 SecondaryManagingView.managePostView();
         }
+    }
+    public static void deletePostController(int id){
+        SecondaryController.postDAO.deletePost(id);
+        MainView.print("您已删除一份博客，正在返回您的主页面.............");
+        SecondaryView.manageView();
+    }
+    public static void updatePostController(Post post){
+        SecondaryController.postDAO.updatePost(post);
+        MainView.print("您已修改一份博客，增在返回您的主页面............");
+        SecondaryView.manageView();
     }
 }

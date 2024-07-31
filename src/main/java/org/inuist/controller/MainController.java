@@ -31,7 +31,7 @@ public class MainController {
                         break;
                         case "4":
                             MainView.print("正在退出，请稍后.........");
-                            break;
+                            return;
             default:
                 MainView.print("输入异常，请重新输入");
         }

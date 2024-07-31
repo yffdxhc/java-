@@ -27,6 +27,7 @@ public class SecondaryBrowsingController {
                     if(page==0){
                         System.out.println("没有上一页，请不要再尝试了...........");
                         SecondaryBrowsingView.allBlogs();
+                        break;
                     }
                     page--;
                     SecondaryBrowsingView.allBlogs();
@@ -36,6 +37,7 @@ public class SecondaryBrowsingController {
                         break;
                         case "4":
                             MainView.print("正在退出系统，请稍后............");
+                            return;
             default:
                 MainView.print("输入异常，请重新输入............");
                 SecondaryBrowsingView.allBlogs();
@@ -56,6 +58,7 @@ public class SecondaryBrowsingController {
                 if(titlepage==0){
                     System.out.println("没有上一页，请不要再尝试了...........");
                     SecondaryBrowsingView.titleLikePost();
+                    break;
                 }
                 titlepage--;
                 SecondaryBrowsingView.titleLikePost();
@@ -65,7 +68,7 @@ public class SecondaryBrowsingController {
                 break;
             case "4":
                 MainView.print("正在退出系统，请稍后............");
-                break;
+                return;
             default:
                 MainView.print("输入异常，请重新输入............");
                 SecondaryBrowsingView.titleLikePost();
@@ -86,6 +89,7 @@ public class SecondaryBrowsingController {
                 if(summarypage==0){
                     System.out.println("没有上一页，请不要再尝试了...........");
                     SecondaryBrowsingView.summaryLikePost();
+                    break;
                 }
                 summarypage--;
                 SecondaryBrowsingView.summaryLikePost();
@@ -95,7 +99,7 @@ public class SecondaryBrowsingController {
                 break;
             case "4":
                 MainView.print("正在退出系统，请稍后............");
-                break;
+                return;
             default:
                 MainView.print("输入异常，请重新输入............");
                 SecondaryBrowsingView.summaryLikePost();
