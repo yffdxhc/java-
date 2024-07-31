@@ -94,6 +94,28 @@ public class UsrDAOImpl implements UsrDAO {
     }
 
     @Override
+    public Usr findByNameAndPwd(String name, String pwd) {
+        String sql = "select * from usr where uname=? and upassword=? and ustatus=1";
+        Usr usr=new Usr();
+        try(
+                Connection c= cp.getConnection();
+                PreparedStatement ps=c.prepareStatement(sql);
+                ){
+            ps.setString(1,name);
+            ps.setString(2,pwd);
+            ResultSet rs=ps.executeQuery();
+            cp.returnConnection(c);
+            if(rs.next()){
+                usr.setUid(rs.getInt("uid"));
+                usr.setUname(rs.getString("uname"));
+                usr.setUpassword(rs.getString("upassword"));
+                usr.setUstatus(rs.getBoolean("ustatus"));
+            }
+        }catch (Exception e){e.printStackTrace();}
+        return usr;
+    }
+
+    @Override
     public boolean register(Usr usr) {
         String sql = "select uname from usr ";
         try(

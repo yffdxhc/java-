@@ -7,6 +7,7 @@ import org.inuist.pojo.Usr;
 import org.inuist.view.MainView;
 import org.inuist.view.SecondaryView;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -39,7 +40,7 @@ public class MainController {
         boolean isLogin = usrDAO.login(inputUsr.getUname(),inputUsr.getUpassword());
         if (isLogin) {
             MainView.print("登录成功，正在进入系统............");
-            SecondaryController.usr=inputUsr;
+            SecondaryController.usr=usrDAO.findByNameAndPwd(inputUsr.getUname(),inputUsr.getUpassword());
             SecondaryView.secondaryView();
         }else {
             MainView.print("登录信息有误，请重新登录.......");

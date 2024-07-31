@@ -249,4 +249,32 @@ public class PostDAOImpl implements PostDAO {
         }catch (Exception e){e.printStackTrace();}
         return posts;
     }
+
+    @Override
+    public List<Post> getPostsByUidWithLimit(int uid,int start,int limit) {
+        String sql="select * from post where uid=? and pstatus=true limit ?,?";
+        List<Post> posts=new ArrayList<>();
+        try(
+                Connection conn = cp.getConnection();
+                PreparedStatement ps = conn.prepareStatement(sql)
+                ){
+            ps.setInt(1, uid);
+            ps.setInt(2,start);
+            ps.setInt(3, limit);
+            ResultSet rs = ps.executeQuery();
+            cp.returnConnection(conn);
+            while (rs.next()){
+                Post post = new Post();
+                post.setPid(rs.getInt("pid"));
+                post.setPtitle(rs.getString("ptitle"));
+                post.setPsummary(rs.getString("psummary"));
+                post.setPcontent(rs.getString("pcontent"));
+                post.setUid(rs.getInt("uid"));
+                post.setPdate(rs.getDate("pdate"));
+                post.setPstatus(rs.getBoolean("pstatus"));
+                posts.add(post);
+            }
+        }catch (Exception e){e.printStackTrace();}
+        return posts;
+    }
 }

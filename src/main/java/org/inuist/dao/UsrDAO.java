@@ -13,6 +13,7 @@ public interface UsrDAO {
     boolean delete(Integer id);
     boolean update(Usr usr);
     boolean login(String uname, String upwd);
+    Usr findByNameAndPwd(String name, String pwd);
     boolean register(Usr usr);
     Integer count();
     Usr findById(Integer id);

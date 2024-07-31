@@ -22,4 +22,5 @@ public interface PostDAO {
     List<Post> getPostsBySummaryLikeWithLimit(String summary, int start, int limit);
     List<Post> getPostsByAuthorLike(String author);
     List<Post> getPostsByAuthorLikeWithLimit(String author, int start, int limit);
+    List<Post> getPostsByUidWithLimit(int uid,int start, int limit);
 }

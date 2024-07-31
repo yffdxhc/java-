@@ -68,14 +68,14 @@ public class TestPostDAO {
     }
     @Test
     public void testGetPostsBySummaryLike(){
-        System.out.println(postDAO.getPostsBySummaryLike("数"));
+        System.out.println(postDAO.getPostsBySummaryLike("周"));
     }
     @Test
     public void testGetPostsByAuthorLikeWithLimit(){
-        System.out.println(postDAO.getPostsByAuthorLikeWithLimit("a",0,5));
+        System.out.println(postDAO.getPostsByAuthorLikeWithLimit("a",6,5));
     }
     @Test
     public void testGetPostsByAuthorLike(){
-        System.out.println(postDAO.getPostsByAuthorLike("a"));
+        System.out.println(postDAO.getPostsByAuthorLike("admin"));
     }
 }

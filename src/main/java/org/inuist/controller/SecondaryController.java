@@ -1,7 +1,11 @@
 package org.inuist.controller;
 
+import org.inuist.dao.PostDAO;
+import org.inuist.dao.impl.PostDAOImpl;
 import org.inuist.pojo.Usr;
 import org.inuist.view.MainView;
+import org.inuist.view.SecondaryBrowsingView;
+import org.inuist.view.SecondaryManagingView;
 import org.inuist.view.SecondaryView;
 
 /**
@@ -10,6 +14,7 @@ import org.inuist.view.SecondaryView;
  */
 public class SecondaryController {
     public static Usr usr = new Usr();
+    static PostDAO postDAO=new PostDAOImpl();
     public static void secondaryController(String userOptionInput) {
         switch (userOptionInput) {
             case "1":
@@ -38,21 +43,16 @@ public class SecondaryController {
     public static void browseController(String userOptionInput) {
         switch (userOptionInput) {
             case "1":
-                //TODO
-                MainView.print("查看本系统拥有的所有博客功能尚在建设............");
-
+                SecondaryBrowsingView.allBlogs();
                 break;
                 case "2":
-                    //TODO
-                    MainView.print("根据博客题目检索功能尚在建设...............");
+                    SecondaryBrowsingView.titleLikeGet();
                     break;
                     case "3":
-                        //TODO
-                        MainView.print("根据博客摘要检索功能尚在建设............");
+                        SecondaryBrowsingView.summaryLikeGet();
                         break;
                         case "4":
                             MainView.print("正在返回上一级............");
-                            SecondaryView.secondaryView();
                             break;
                             case "5":
                                 MainView.print("正在退出博客系统，请稍后............");
@@ -66,26 +66,15 @@ public class SecondaryController {
     public static void manageController(String userOptionInput){
         switch (userOptionInput) {
             case "1":
-                //TODO
-                MainView.print("写博客功能尚在建设............");
+                SecondaryManagingView.writePostView();
                 break;
                 case "2":
-                    //TODO
-                    MainView.print("删除博客功能尚在建设............");
-                    break;
-                    case "3":
-                        //TODO
-                        MainView.print("修改博客功能尚在建设...........");
-                        break;
-                        case "4":
-                            //TODO
-                            MainView.print("产看博客功能尚在建设............");
-                            break;
-                            case "5":
+                    SecondaryManagingView.managePostView();
+                            case "3":
                                 MainView.print("正在返回上一级，请稍后............");
                                 SecondaryView.secondaryView();
                                 break;
-                                case "6":
+                                case "4":
                                     MainView.print("正在退出系统，请稍后............");
                                     break;
             default:

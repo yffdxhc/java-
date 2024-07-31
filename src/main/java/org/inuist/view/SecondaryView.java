@@ -47,11 +47,9 @@ public class SecondaryView {
         System.out.printf("=========当前用户名：%s=========",SecondaryController.usr.getUname());
         System.out.println();
         MainView.print("1.写博客请输入‘1’");
-        MainView.print("2.删博客请输入‘2’");
-        MainView.print("3.修改博客请输入‘3’");
-        MainView.print("4.查看博客请输入‘4’");
-        MainView.print("5.返回上一级请输入‘5’");
-        MainView.print("6.退出请输入‘6’");
+        MainView.print("2.管理博客请输入‘2’");
+        MainView.print("3.返回上一级请输入‘3’");
+        MainView.print("4.退出请输入‘4’");
         MainView.print("-------------------");
         String scan = scanner.nextLine();
         SecondaryController.manageController(scan);
