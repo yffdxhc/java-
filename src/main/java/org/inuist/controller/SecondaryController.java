@@ -53,6 +53,7 @@ public class SecondaryController {
                         break;
                         case "4":
                             MainView.print("正在返回上一级............");
+                            SecondaryView.secondaryView();
                             break;
                             case "5":
                                 MainView.print("正在退出博客系统，请稍后............");
