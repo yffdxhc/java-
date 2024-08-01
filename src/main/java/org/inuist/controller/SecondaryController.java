@@ -72,13 +72,13 @@ public class SecondaryController {
                 case "2":
                     SecondaryManagingView.managePostView();
                     break;
-                            case "3":
-                                MainView.print("正在返回上一级，请稍后............");
-                                SecondaryView.secondaryView();
-                                break;
-                                case "4":
-                                    MainView.print("正在退出系统，请稍后............");
-                                    return;
+                    case "3":
+                        MainView.print("正在返回上一级，请稍后............");
+                        SecondaryView.secondaryView();
+                        break;
+                        case "4":
+                            MainView.print("正在退出系统，请稍后............");
+                            return;
             default:
                 MainView.print("输入异常，请重新输入");
                 SecondaryView.manageView();
