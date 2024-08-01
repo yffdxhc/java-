@@ -60,7 +60,8 @@ public class SecondaryManagingView {
         System.out.printf("=========当前用户名：%s=========",SecondaryController.usr.getUname());
         System.out.println();
         MainView.print("请输入要删除的博客的id:");
-        int id = scanner.nextInt();
+        String i = scanner.nextLine();
+        int id = Integer.parseInt(i);
         SecondaryManagingController.deletePostController(id);
     }
 
