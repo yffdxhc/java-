@@ -77,7 +77,7 @@ public class SecondaryBrowsingView {
         System.out.println();
         System.out.printf("=========当前用户名：%s=========",SecondaryController.usr.getUname());
         System.out.println();
-        System.out.printf("=========当前检索的题目：%s=========",SecondaryBrowsingController.summarylike);
+        System.out.printf("=========当前检索的摘要关键字：%s=========",SecondaryBrowsingController.summarylike);
         System.out.println();
         SecondaryBrowsingController.startSummaryLikePosts();
         System.out.printf("=========当前为第%d页=========",SecondaryBrowsingController.summarypage+1);
